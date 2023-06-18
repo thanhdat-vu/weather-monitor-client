@@ -10,9 +10,11 @@ function App() {
   });
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get("https://weather-monitor-server.onrender.com/api/data").then((res) => {
-        setData(res.data);
-      });
+      axios
+        .get("https://weather-monitor-server.onrender.com/api/data")
+        .then((res) => {
+          setData(res.data);
+        });
     }, 10000);
     return () => clearInterval(interval);
   }, []);
@@ -28,7 +30,12 @@ function App() {
       }}
     >
       <h1>Mini Project - Nhóm 8</h1>
-      <p>Biểu đồ biểu thị nhiệt độ và độ ẩm theo thời gian:</p>
+
+      {data.temperature.length === 0 ? (
+        <p>Đang tải dữ liệu...</p>
+      ) : (
+        <p>Biểu đồ biểu thị nhiệt độ và độ ẩm theo thời gian:</p>
+      )}
       <ResponsiveLine
         data={[{ id: "Nhiệt độ", data: data.temperature }]}
         margin={{ top: 40, right: 120, bottom: 80, left: 80 }}
