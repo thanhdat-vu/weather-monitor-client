@@ -10,7 +10,7 @@ function App() {
   });
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get("http://localhost:5000/api/data").then((res) => {
+      axios.get("https://weather-monitor-server.onrender.com/api/data").then((res) => {
         setData(res.data);
       });
     }, 10000);
