@@ -23,10 +23,10 @@ function App() {
     <div
       style={{
         width: "100%",
+        minWidth: "500px",
         maxWidth: "800px",
         height: "400px",
         margin: "0 auto",
-        padding: "0 20px",
       }}
     >
       <h1>Mini Project - Nhóm 8</h1>
